@@ -4,10 +4,9 @@ import com.fiec.revisaop2.features.aluno.models.dto.LoginAlunoDto;
 import com.fiec.revisaop2.features.aluno.models.dto.RegisterAlunoDto;
 import com.fiec.revisaop2.features.aluno.models.dto.ResponseAlunoDto;
 import com.fiec.revisaop2.features.aluno.services.AlunoService;
-import com.fiec.revisaop2.features.usuario.models.dto.LoginUserDTO;
-import com.fiec.revisaop2.features.usuario.models.dto.RegisterUserDTO;
-import com.fiec.revisaop2.features.usuario.models.dto.UserResponseDTO;
-import com.fiec.revisaop2.features.usuario.services.UsuarioService;
+import com.fiec.revisaop2.features.aluno.models.dto.LoginAlunoDto;
+import com.fiec.revisaop2.features.aluno.models.dto.RegisterAlunoDto;
+import com.fiec.revisaop2.features.aluno.models.dto.ResponseAlunoDto;
 import lombok.AllArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -37,7 +36,4 @@ public class AlunoController {
     @PutMapping(value = "/photo/{id}", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     ResponseEntity<Void> atualizaImagem(MultipartFile multipartFile, @PathVariable("id") String userId) {
         alunoService.insereImagem(multipartFile, userId);
-        return ResponseEntity.ok().build();
-    }
-}
-
+        return ResponseEntity.ok().build();}}

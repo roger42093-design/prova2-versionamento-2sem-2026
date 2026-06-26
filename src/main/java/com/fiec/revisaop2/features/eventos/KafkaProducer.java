@@ -13,5 +13,6 @@ public class KafkaProducer {
         // Asynchronous send
         kafkaTemplate.send(topic, message);
 
+
     }
 }

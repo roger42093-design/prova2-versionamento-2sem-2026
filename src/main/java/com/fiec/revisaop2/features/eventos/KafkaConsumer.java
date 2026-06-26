@@ -1,6 +1,7 @@
 package com.fiec.revisaop2.features.eventos;
 
 import com.fiec.revisaop2.config.FirebaseConfig;
+import com.fiec.revisaop2.features.aluno.models.entities.Aluno;
 import com.fiec.revisaop2.features.aluno.repositories.AlunoRepository;
 
 import com.google.firebase.messaging.FirebaseMessaging;
@@ -33,6 +34,11 @@ public class KafkaConsumer {
 
         String fcmToken = "";
         String imageUrl = "";
+        Integer alunoId = Integer.parseInt(message.split(",")[0]);
+        String fileName = message.split(",")[1];
+        Aluno aluno = alunoRepository.findById(alunoId).orElseThrow();
+        String fmcToken = aluno.getFcmToken();
+
         // Pegue a mensagem (que é uma string) e divida ela em id e imageurl.
         // Com o id você encontra o usuario no repositorio e depois
         // o fcmToken.
