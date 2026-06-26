@@ -81,7 +81,7 @@ public class AlunoServiceImpl implements AlunoService {
     @Override
     public void insereImagem(MultipartFile multipartFile, String userId) {
         String fileName = UUID.randomUUID() + "_" + multipartFile.getOriginalFilename();
-        String bucket = "prova2";
+        String bucket = "fiec-versionamento-46137";
 
         try {
             S3Client s3Client = S3Client.builder()
